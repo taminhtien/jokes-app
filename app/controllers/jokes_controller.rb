@@ -1,9 +1,12 @@
 class JokesController < ApplicationController
   before_action :set_joke, only: [:like, :dislike, :next_joke]
-  before_action :set_session, only: [:index]
 
   def index
-    @joke = Joke.first
+    if session[:out_of_joke] == true
+      @joke = nil
+    else
+      @joke = Joke.first
+    end
   end
 
   def like
@@ -22,15 +25,20 @@ class JokesController < ApplicationController
       @joke = Joke.find(params[:id])
     end
 
-    def set_session
-      @jokes = Joke.all
-      @jokes.each do |joke|
-        (session[:jokes_id] ||= []) << joke.id
+    def next_joke
+      
+      # Checks last joke
+      if @joke == last_joke
+        session[:out_of_joke] ||= true
+        @joke = nil
+      else
+        @joke = Joke.where('id > ?', @joke.id).first
       end
+
+      render 'joke.js.erb'
     end
 
-    def next_joke
-      @joke = Joke.where('id > ?', @joke.id).first
-      render 'joke.js.erb'
+    def last_joke
+      Joke.last
     end
 end
