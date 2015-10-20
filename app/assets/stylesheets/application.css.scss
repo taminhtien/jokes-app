@@ -1,0 +1,84 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  font-family: 'Lato', 'Muli', sans-serif;
+}
+
+h1, h5 {
+  font-family: 'Muli', sans-serif;
+  font-weight: 900;
+}
+
+.navbar-default {
+  background-color: #fff;
+  .info {
+    float: left;
+    padding-top: 30px;
+    padding-right: 10px;
+    text-align: right;
+    p {
+      line-height: 8px;
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+    }
+  }
+  .avt {
+    float: right;
+    padding-top: 7px;
+  }
+}
+
+#intro {
+  margin-top: 86px;
+  background-color: #27ae60;
+  text-align: center;
+  color: #fff;
+  padding: 50px 0;
+  box-shadow: inset 0px 10px 10px -10px rgba(0,0,0,0.75);
+}
+
+#main{
+  min-height: 345px;
+  #joke {
+    padding: 30px 0 30px 0;
+    text-align: center;
+
+    .content {
+      text-align: left;
+      font-size: 17px;
+      height: 230px;
+    }
+
+    .btn-flat {
+      border-radius: 0;
+      border-bottom: 3px solid rgba(0, 0, 0, .5);
+      width: 200px;
+      height: 40px;
+      font-size: 15px;
+    }
+  }
+}
+
+footer {
+  font-family: 'Lato', sans-serif;
+  padding: 50px 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 5px solid #eeeeee;
+  text-align: center;
+}

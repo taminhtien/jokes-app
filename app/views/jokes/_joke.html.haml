@@ -1,0 +1,5 @@
+.content
+  %p= sanitize(joke.content)
+
+= link_to "This is funny!", like_joke_path(joke), method: :patch, remote: true, class: "btn btn-primary btn-flat"
+= link_to "This is not funny!", dislike_joke_path(joke), method: :patch, remote: true, class: "btn btn-success btn-flat"

@@ -1,0 +1,5 @@
+<% if @joke.nil? %>
+  $('#joke').html("<h3>That's all the jokes for today! Come back another day!</h3>");
+<% else %>
+  $('#joke').html('<%= escape_javascript render(@joke) %>');
+<% end %>
