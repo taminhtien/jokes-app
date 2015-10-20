@@ -17,6 +17,9 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'rspec-rails', '~> 3.3', '>= 3.3.3'
+  gem 'capybara', '~> 2.5'
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
 end
 
 group :production do
